@@ -1,0 +1,11 @@
+<div class="col-lg-3">
+</div>
+<div class="col-lg-9">
+  <h2>Enter Jabong Product Url</h2>
+  <%= form_tag parse_data_path, class: "url_form" do %>
+    <%= label_tag :url %>
+    <%= text_field_tag :url, nil, required: true %>
+
+    <%= submit_tag "Get Details", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

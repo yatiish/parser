@@ -1,0 +1,29 @@
+<h1>Product</h1>
+<% if @product.present? %>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Url</td>
+        <td><%= @product.url %></td>
+      </tr>
+      <tr>
+        <td>Brand Name</td>
+        <td><%= @product.brand_name %></td>
+      </tr>
+      <tr>
+        <td>Product Name</td>
+        <td><%= @product.product_name %></td>
+      </tr>
+      <tr>
+        <td>Actual Price</td>
+        <td><%= @product.actual_price %></td>
+      </tr>
+      <tr>
+        <td>Selling Price</td>
+        <td><%= @product.selling_price %></td>
+      </tr>
+    </tbody>
+  <table>
+<% else %>
+  <h4>The url entered does not represent a jabong product. Please enter an url which displays jabong product.</h4>
+<% end %>
