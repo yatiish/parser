@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
     product_name = data.scan(/itemprop="name">(.*)<\/span>/).last
     if product_name.present?
       brand_name = data.match(/itemprop="brand">(.*)<\/span>/)[1]
-      selling_price = (data.match(/"striked-price(.*)<\/span>/)[1]).gsub(/.*Rs./,"")
-      actual_price = (data.match(/<span itemprop="price"(.*)<\/span>/)[1]).
+      actual_price = (data.match(/"striked-price(.*)<\/span>/)[1]).gsub(/.*Rs./,"")
+      selling_price = (data.match(/<span itemprop="price"(.*)<\/span>/)[1]).
         match(/>(.*)<\/span>/)[1]
       @product = Product.create(product_name: product_name.first,
         brand_name: brand_name, selling_price: selling_price,
